@@ -1,2 +1,2 @@
 # GameOfLife
-Assignment 2 in the course Model-Based Design of Cyber-Physical Systems at the University of Amsterdam
+A project using DSL, xtext and xtend to generate java code to change behaviour in a Java project.

@@ -24,7 +24,7 @@ class GameOfLifeDSLValidator extends AbstractGameOfLifeDSLValidator {
 				INVALID_POINT
 			)
 		}
-	} // bobby
+	}
 	
 	@Check
 	def checkYCoordinateIsWithinRange(Point point) {
