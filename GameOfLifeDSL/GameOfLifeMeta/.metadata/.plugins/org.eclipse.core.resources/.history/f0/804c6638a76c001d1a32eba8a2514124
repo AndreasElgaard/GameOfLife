@@ -1,0 +1,29 @@
+grammar gameOfLife.GameOfLifeDSL with org.eclipse.xtext.common.Terminals
+
+generate gameOfLifeDSL "http://www.GameOfLifeDSL.gameOfLife"
+	
+GameOfLife: 'GameOfLife:'
+	'aliveCells:' aliveCells += Point+
+	'evolutionRules:' (evolutionRules += EvolutionRule)+
+;
+	
+Point: 
+	'(' x = INT ',' y = INT ')'
+;
+
+
+EvolutionRule:
+	'EvolutionRule''(''surrounding' conditionElement = ConditionElements amount = INT ':' action = Action ')'
+;
+
+enum ConditionElement:
+	LOWER = '<' |
+	GREATER = '>' |
+	EQUAL = '=='
+;
+
+enum Action:
+	DIE = 'die' |
+	LIVE = 'live' |
+	BECOMEALIVE = 'becomeAlive'
+;

@@ -1,0 +1,38 @@
+package gameOfLife.generator
+
+import gameOfLife.gameOfLifeDSL.Rule
+import gameOfLife.gameOfLifeDSL.Condition
+import gameOfLife.gameOfLifeDSL.Action
+
+class Auxiliary {
+	def static String getTextRule(Rule r) {
+		switch(r.action) {
+			case Action::DIES:
+				return '''
+				if (gameBoard[i][j] && (surrounding «Auxiliary.getValidCondition(r.condition)» «r.amount»)) {
+					continue;
+				}				        
+				'''
+			case Action::SURVIVES:
+				return '''
+				if (gameBoard[i][j] && (surrounding «Auxiliary.getValidCondition(r.condition)» «r.amount»)) {
+					survivingCells.add(new Point(i-1,j-1));
+				}				        
+				'''
+			case Action::FORMS:
+				return '''
+				if ((!gameBoard[i][j]) && (surrounding «Auxiliary.getValidCondition(r.condition)» «r.amount»)) {
+					survivingCells.add(new Point(i-1,j-1));
+				}				        
+				'''	
+		}
+	}
+	
+	def static String getValidCondition (Condition c) { 
+		switch(c) { 
+		 case Condition::LOWER: return '''<''' 
+		 case Condition::GREATER: return '''>''' 
+		 case Condition::EQUAL: return '''==''' 
+	   } 
+  	} 
+}
