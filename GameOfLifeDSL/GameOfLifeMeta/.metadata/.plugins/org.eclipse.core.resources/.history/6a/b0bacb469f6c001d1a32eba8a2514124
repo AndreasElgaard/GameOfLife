@@ -1,4 +1,0 @@
-grammar gameOfLife.GameOfLifeDSL with org.eclipse.xtext.common.Terminals
-
-generate gameOfLifeDSL "http://www.GameOfLifeDSL.gameOfLife"
-	
