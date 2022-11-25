@@ -48,14 +48,14 @@
         points.add(new Point(44, 30));
         points.add(new Point(44, 31));
         points.add(new Point(45, 24));
-        points.add(new Point(45, 25));
+        points.add(new Point(45, 501));
         points.add(new Point(45, 26));
         points.add(new Point(45, 27));
         points.add(new Point(45, 28));
         points.add(new Point(45, 29));
         points.add(new Point(45, 30));
         points.add(new Point(45, 31));
-        points.add(new Point(46, 24));
+        points.add(new Point(751, 24));
         points.add(new Point(46, 25));
         points.add(new Point(46, 26));
         points.add(new Point(46, 27));

@@ -71,10 +71,12 @@ class JavaGenerator {
 	}
 	
 	def static String getConditionElement (ConditionElement condition) { 
-		switch(condition) { 
-			 case ConditionElement::GREATER: return '''>'''
-			 case ConditionElement::LOWER: return '''<''' 
-			 case ConditionElement::EQUAL: return '''==''' 
-		} 
+		if (condition ==  ConditionElement::GREATER) {
+			return '''>'''
+		} else if (condition ==  ConditionElement::LOWER) {
+			return '''<''' 
+		} else if (condition ==  ConditionElement::EQUAL) {
+			return '''=='''
+		}
 	} 
 }

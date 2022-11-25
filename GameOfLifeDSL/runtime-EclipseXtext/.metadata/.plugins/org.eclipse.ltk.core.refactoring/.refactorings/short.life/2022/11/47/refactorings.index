@@ -11,3 +11,8 @@
 1669365403825	Rename resource 'classic.tdsl'
 1669374748157	Rename resource 'spec1.tdsl'
 1669374757766	Copy file
+1669391940254	Rename resource 'withWarnings.tdsl'
+1669392048477	Rename resource 'awithWarnings.tdsl'
+1669392059115	Rename resource 'correct.tdsl'
+1669392141040	Delete element
+1669392183859	Rename resource 'correct1.tdsl'

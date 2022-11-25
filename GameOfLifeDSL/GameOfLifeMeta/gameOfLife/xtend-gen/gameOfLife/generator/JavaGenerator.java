@@ -183,22 +183,24 @@ public class JavaGenerator {
   }
 
   public static String getConditionElement(final ConditionElement condition) {
-    if (condition != null) {
-      switch (condition) {
-        case GREATER:
-          StringConcatenation _builder = new StringConcatenation();
-          _builder.append(">");
-          return _builder.toString();
-        case LOWER:
-          StringConcatenation _builder_1 = new StringConcatenation();
-          _builder_1.append("<");
-          return _builder_1.toString();
-        case EQUAL:
+    boolean _equals = Objects.equal(condition, ConditionElement.GREATER);
+    if (_equals) {
+      StringConcatenation _builder = new StringConcatenation();
+      _builder.append(">");
+      return _builder.toString();
+    } else {
+      boolean _equals_1 = Objects.equal(condition, ConditionElement.LOWER);
+      if (_equals_1) {
+        StringConcatenation _builder_1 = new StringConcatenation();
+        _builder_1.append("<");
+        return _builder_1.toString();
+      } else {
+        boolean _equals_2 = Objects.equal(condition, ConditionElement.EQUAL);
+        if (_equals_2) {
           StringConcatenation _builder_2 = new StringConcatenation();
           _builder_2.append("==");
           return _builder_2.toString();
-        default:
-          break;
+        }
       }
     }
     return null;
