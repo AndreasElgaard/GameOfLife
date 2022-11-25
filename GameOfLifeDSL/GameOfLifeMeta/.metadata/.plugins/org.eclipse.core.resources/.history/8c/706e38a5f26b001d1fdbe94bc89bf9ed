@@ -1,0 +1,43 @@
+grammar gameOfLife.GameOfLifeDSL with org.eclipse.xtext.common.Terminals
+
+generate gameOfLifeDSL "http://www.GameOfLifeDSL.gameOfLife"
+
+Model:
+	greetings+=Greeting*;
+	
+Greeting:
+	'Hello' name=ID '!';
+
+GridHeight: 'Height' height = INT;
+GridWidth: 'Width' width = INT;
+
+
+Gameoflife:
+	cells+=Cell* 
+	rules+=Rule*
+;
+
+	
+Cell:
+	'Cell' x=INT y=INT |
+	'Cells' x=INT y=INT no=INT dir=Direction | 
+	'Fill' x1=INT y1=INT x2=INT y2=INT |
+	'Random' no=INT
+;
+
+Rule:
+	'Rule' type=RuleType (sign = '<'|'='|'>') n=INT
+;
+
+enum Direction:
+	NORTH='North' |
+	EAST='East' |
+	SOUTH='South' |
+	WEST='West'
+;
+
+enum RuleType:
+	MULTIPLY='Multiply' |
+	STAY='Stay' |
+	DIE='Die' 
+;
